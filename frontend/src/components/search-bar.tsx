@@ -19,7 +19,7 @@ export function SearchBar ({ onSearchSubmit }: SearchBarProps): JSX.Element {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
-        <button type="submit">Search</button>
+       
       </form>
     </div>
   );
