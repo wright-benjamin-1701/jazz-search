@@ -1,7 +1,10 @@
 .App {
   margin: 15px;
   text-align: center;
-  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 
 
 }
@@ -98,20 +101,10 @@ border: 1px solid #4a4c50;
   outline: none;
 }
 
-.button {
-  width: 100px;
-  height: 3vh;
-  background-color: #071b70;
-  border-radius: 4px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  color: white;
-  font-size: 1rem;
-  text-align: center;
-  cursor: pointer;
-}
+.BasicSearch {
 
-.button:hover {
-  background-color: #4a4c50;
+  margin: 10px;
+
 }
 
 h1 {
