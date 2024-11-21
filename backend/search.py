@@ -11,7 +11,7 @@ vectorizer = joblib.load('vectorizer.pkl')
 vectors = sparse.load_npz('jazz.npz')
 dense_vectors = vectors.todense().tolist()
 
-nbrs = NearestNeighbors(n_neighbors=20,algorithm='brute')
+nbrs = NearestNeighbors(n_neighbors=20,algorithm='brute',radius=2)
 nbrs.fit(dense_vectors)
 
 names = np.load('names.npy',allow_pickle=True)
@@ -19,8 +19,11 @@ names = np.load('names.npy',allow_pickle=True)
 term_df = pd.DataFrame(dense_vectors,columns=names)
 
 def jazz_search(search_string):
-    _,indices = nbrs.kneighbors(vectorizer.transform([search_string]))
     
-    ret_df = jazz_df.iloc[indices[0]][['url','title','image_url']]
+    distances,indices = nbrs.kneighbors(vectorizer.transform([search_string]))
+    mask = distances[0] < 2
+    inds = indices[0][mask]
+        
+    ret_df = jazz_df.iloc[inds][['url','title','image_url']]
     
     return {'records': ret_df.to_records().tolist()}
