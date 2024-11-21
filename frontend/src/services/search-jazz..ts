@@ -2,8 +2,8 @@ import axios from 'axios';
 import { Page } from '../types';
 
 const processRecords = (responseData:any) : Page[] => {
-  if (!responseData) return [];
-  return responseData.map((record:any) => ({
+  if (!responseData && !responseData.records) return [];
+  return responseData.records.map((record:any) => ({
         id: record[0],
         url: record[1],
         title: record[2],
