@@ -1,5 +1,1 @@
-1. add pagination to results
-2. add "previous searches"
-3. add "search relevance"
-4. add redux store 
-5. clean up style structure
+1. add discrete information 

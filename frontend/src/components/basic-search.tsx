@@ -7,7 +7,7 @@ import { SearchBar } from './search-bar';
 
 function BasicSearch() {
 
-  const [searchTerm, setSearchTerm] = useState('Charlie Parker');
+  const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState<Page[]>([]);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ function BasicSearch() {
     <div className="BasicSearch">
       <h1>Jazz Search</h1>
       <SearchBar onSearchSubmit={onSearchSubmit}/>
-      <SearchResults pages={searchResults}/>
+      <SearchResults pages={searchResults} searchString={searchTerm}/>
       
     </div>
   );

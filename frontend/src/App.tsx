@@ -3,14 +3,18 @@ import './App.css';
 
 import BasicSearch from './components/basic-search';
 
+
+
 function App() {
 
 
 
   return (
-    <div className="App">
-      <BasicSearch />
-    </div>
+    
+      <div className="App">
+        <BasicSearch />
+      </div>
+  
   );
 }
 
