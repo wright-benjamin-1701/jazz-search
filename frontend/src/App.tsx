@@ -3,6 +3,7 @@ import './App.css';
 import searchJazzRequest from './services/search-jazz.';
 import { Page } from './types';
 import { SearchResults } from './components/search-results';
+import BasicSearch from './components/basic-search';
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
 
   return (
     <div className="App">
-      <SearchResults pages={searchResults}/>
+      <BasicSearch />
       
     </div>
   );

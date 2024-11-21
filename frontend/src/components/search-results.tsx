@@ -3,7 +3,7 @@ import { SearchResult } from './search-result';
 
 export function SearchResults ({ pages }: { pages: Page[] }) {
   return (
-    <div>
+    <div className='search-results'>
       {pages.map((page)=><SearchResult page={page} />)}
     </div>
   );

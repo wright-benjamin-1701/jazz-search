@@ -2,9 +2,8 @@ import { Page } from '../types';
 
 export function SearchResult ({ page }: { page: Page }) {
   return (
-    <div>
-      <h1>{page.title}</h1>
-      <p>{page.url}</p>
+    <div className='search-result'>
+      <a href={page.url} target='_blank' rel='noreferrer'>{page.title} </a>
     </div>
   );
 };
