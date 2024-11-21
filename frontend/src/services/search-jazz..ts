@@ -8,6 +8,8 @@ const processRecords = (responseData:any) : Page[] => {
         url: record[1],
         title: record[2],
         image_url: record[3],
+        page_type: record[4],
+        genre: record[5],
 
   }));
 }

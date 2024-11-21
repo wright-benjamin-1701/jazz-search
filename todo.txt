@@ -1,1 +1,2 @@
-1. add discrete information 
+1. add discrete information to search results
+2. set up continuous deployment

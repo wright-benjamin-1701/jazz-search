@@ -3,7 +3,7 @@ import { Page } from "../types";
 import { SearchResult } from "./search-result";
 
 export function SearchResults({ pages, searchString }: { pages: Page[], searchString:string }) {
-  const resultsPerPage = 10;
+  const resultsPerPage = 8;
 
   const [index, setIndex] = useState(0);
   const [searchStringCached,setSearchStringCached] = useState('');
