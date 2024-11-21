@@ -47,4 +47,18 @@
 
 .search-result {
   padding: .2rem;
+  border-radius: .3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
+
+.search-result img {
+  padding: .75rem;
+  border-radius: .1rem;
+  border: #282c34;
+  box-shadow: #282c34;
+  border-radius: 50%;
+}
+

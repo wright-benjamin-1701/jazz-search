@@ -7,6 +7,7 @@ const processRecords = (responseData:any) : Page[] => {
         id: record[0],
         url: record[1],
         title: record[2],
+        image_url: record[3],
 
   }));
 }

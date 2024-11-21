@@ -5,7 +5,7 @@ import numpy as np
 from scipy import sparse
 import joblib
 
-jazz_df = pd.read_csv('jazz2.csv')
+jazz_df = pd.read_csv('jazz2.csv').fillna('')
 
 vectorizer = joblib.load('vectorizer.pkl')
 vectors = sparse.load_npz('jazz.npz')
@@ -21,6 +21,6 @@ term_df = pd.DataFrame(dense_vectors,columns=names)
 def jazz_search(search_string):
     _,indices = nbrs.kneighbors(vectorizer.transform([search_string]))
     
-    ret_df = jazz_df.iloc[indices[0]][['url','title']]
+    ret_df = jazz_df.iloc[indices[0]][['url','title','image_url']]
     
     return ret_df.to_records().tolist()

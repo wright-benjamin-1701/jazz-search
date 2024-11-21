@@ -7,7 +7,7 @@ import { SearchBar } from './search-bar';
 
 function BasicSearch() {
 
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState('Charlie Parker');
   const [searchResults, setSearchResults] = useState<Page[]>([]);
 
   useEffect(() => {
