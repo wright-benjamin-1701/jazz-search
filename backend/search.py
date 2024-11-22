@@ -31,15 +31,14 @@ def jazz_search(search_string):
     inds = indices[0][mask]
 
     pca = PCA(n_components=2)
-
     vecs = pca.fit_transform(term_df.iloc[inds])
-
+    
     search_point = pca.transform(vec.todense().tolist())[0]
-    print(search_point)
 
     points = [{'x': coordinate[0], 'y':coordinate[1]} for coordinate in vecs]
 
     ret_df = jazz_df.iloc[inds][['url','title','image_url','pagetype','genre']]
     
-    return {'records': ret_df.to_records().tolist(),'points':points,
-            'searchPoint':{'x':search_point[0],'y':search_point[1]}}
+    return {'records': ret_df.to_records().tolist(),
+            'points':points,
+            'searchTermPoint':{'x':search_point[0],'y':search_point[1]}}

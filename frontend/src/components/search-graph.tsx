@@ -2,7 +2,7 @@ import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, Responsive
 import { Point } from '../types';
 
 
-export function SearchGraph({points,searchPoint} :{points:Point[],searchPoint?:Point}){
+export function SearchGraph({points,searchTermPoint} :{points:Point[],searchTermPoint?:Point}){
 
 
     
@@ -21,7 +21,7 @@ export function SearchGraph({points,searchPoint} :{points:Point[],searchPoint?:P
           <YAxis type="number" dataKey="y" name="y" unit="" />
           <Tooltip cursor={{ strokeDasharray: '3 3' }} />
           <Scatter name="Visualization of search results" data={points} fill="#8884d8" />
-          <Scatter name="Visualization of search results" data={[searchPoint]} fill="#CC0011" />
+          <Scatter name="Visualization of search results" data={[searchTermPoint]} fill="#CC0011" />
 
         </ScatterChart>
       </ResponsiveContainer>;

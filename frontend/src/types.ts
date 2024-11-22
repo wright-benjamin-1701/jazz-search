@@ -2,8 +2,8 @@ export interface Page {
   id: number;
   url: string;
   title: string;
-  image_url: string;
-  page_type: string;
+  imageUrl: string;
+  pageType: string;
   genre: string;
 }
 
@@ -16,5 +16,5 @@ export interface Point{
 export interface SearchResponse{
   records: Page[];
   points: Point[];
-  searchPoint?: Point;
+  searchTermPoint: Point;
 }

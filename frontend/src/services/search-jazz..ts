@@ -2,16 +2,16 @@ import axios from 'axios';
 import { SearchResponse } from '../types';
 
 const processRecords = (responseData:any) : SearchResponse => {
-  if (!responseData && !responseData.records) return {records:[],points:[],searchPoint:undefined};
+  if (!responseData && !responseData.records) return {records:[],points:[],searchTermPoint:{'x':0,'y':0}};
   return {records: responseData.records.map((record:any) => ({
         id: record[0],
         url: record[1],
         title: record[2],
-        image_url: record[3],
-        page_type: record[4],
+        imageUrl: record[3],
+        pageType: record[4],
         genre: record[5],
 
-  })) , points: responseData.points,searchPoint:responseData.searchPoint};
+  })) , points: responseData.points,searchTermPoint:responseData.searchTermPoint};
 }
 
 async function searchJazzRequest(searchString: string) {
