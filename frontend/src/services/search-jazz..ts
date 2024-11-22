@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { Page } from '../types';
+import { SearchResponse } from '../types';
 
-const processRecords = (responseData:any) : Page[] => {
-  if (!responseData && !responseData.records) return [];
-  return responseData.records.map((record:any) => ({
+const processRecords = (responseData:any) : SearchResponse => {
+  if (!responseData && !responseData.records) return {records:[],points:[],searchPoint:undefined};
+  return {records: responseData.records.map((record:any) => ({
         id: record[0],
         url: record[1],
         title: record[2],
@@ -11,7 +11,7 @@ const processRecords = (responseData:any) : Page[] => {
         page_type: record[4],
         genre: record[5],
 
-  }));
+  })) , points: responseData.points,searchPoint:responseData.searchPoint};
 }
 
 async function searchJazzRequest(searchString: string) {
